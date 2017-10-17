@@ -1,29 +1,17 @@
 package Wine;
 
+import com.example.hkonsbckman.wine_v2.R;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Håkon S. Bøckman on 16.10.2017.
  */
 
 public class Wine {
-    private int ID;
     private String title;
     private int imageID;
-    private String information;
-    private String origin;
-    private String grapeSort;
-
-    private static ArrayList<Wine> wineList = new ArrayList<Wine>();
-
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
 
     public String getTitle() {
         return title;
@@ -41,44 +29,34 @@ public class Wine {
         this.imageID = imageID;
     }
 
-    public String getInformation() {
-        return information;
-    }
+    public static List<Wine> getData(){
 
-    public void setInformation(String information) {
-        this.information = information;
-    }
+        List<Wine> data = new ArrayList<>();
 
-    public String getOrigin() {
-        return origin;
-    }
+        int[] images = {
+                R.drawable.wine1,
+                R.drawable.wine2,
+                R.drawable.wine3,
+                R.drawable.wine4,
+                R.drawable.wine5
+        };
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
+        String [] Wines = {
+                "wine 1",
+                "wine 2",
+                "wine 3",
+                "wine 4",
+                "wine 5"
+        };
 
-    public String getGrapeSort() {
-        return grapeSort;
-    }
+        for(int i = 0; i < images.length; i++){
 
-    public void setGrapeSort(String grapeSort) {
-        this.grapeSort = grapeSort;
-    }
+            Wine currentWine = new Wine();
+            currentWine.setTitle(Wines[i]);
+            currentWine.setImageID(images[i]);
+            data.add(currentWine);
+        }
+        return data;
 
-    public Wine(int ID, String title) {
-        this.ID = ID;
-        this.title = title;
-    }
-
-    public static ArrayList<Wine> getWineList() {
-        return wineList;
-    }
-
-    public static void setWineList(ArrayList<Wine> wineList) {
-        Wine.wineList = wineList;
-    }
-
-    public static void addWineToList(Wine wine){
-        wineList.add(wine);
     }
 }
