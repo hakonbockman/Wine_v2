@@ -8,16 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/MaterialTheme">
+        <activity android:name="com.example.hkonsbockman.wine_v2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Wine.WineInfoActivity" />
-        <activity android:name="Wine.WineListAllWinesActivity"></activity>
+        <activity android:name="com.example.hkonsbockman.wine_v2.leave_it_here_for_now.WineInfoActivity" />
+        <activity
+            android:name="com.example.hkonsbockman.wine_v2.WineActivity"
+            android:label="@string/title_activity_wine"></activity>
+        <activity android:name="com.example.hkonsbockman.wine_v2.ListActivity"></activity>
     </application>
 
 </manifest>

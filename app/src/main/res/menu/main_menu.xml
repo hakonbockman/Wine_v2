@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/WineMenuElement_allWines"
+        android:icon="@drawable/wine_icon"
+        android:title="@string/WineMenuElement_Wines"
+        app:showAsAction="never"
+    />
+    <!--app:showAsAction="ifRoom|withText" -->
+
+    <item
+        android:id="@+id/WineMenuElement_wineInfo"
+        android:icon="@drawable/info_icon"
+        android:title="Info of a wine"
+        app:showAsAction="never" />
+    <!--
+        <item
+            android:id="@+id/animals"
+            android:icon="@drawable/ic_pets"
+            android:title="@string/animals"
+            app:showAsAction="always" />
+    -->
+
 
 </menu>

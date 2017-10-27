@@ -1,4 +1,4 @@
-package com.example.hkonsbockman.wine_v2;
+package com.example.hkonsbockman.wine_v2.model;
 
 import com.example.hkonsbckman.wine_v2.R;
 

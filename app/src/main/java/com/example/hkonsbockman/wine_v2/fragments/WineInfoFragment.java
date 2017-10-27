@@ -1,4 +1,4 @@
-package com.example.hkonsbockman.wine_v2.leave_it_here_for_now;
+package com.example.hkonsbockman.wine_v2.fragments;
 
 import android.os.Bundle;
 import android.app.Fragment;
