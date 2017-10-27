@@ -1,6 +1,5 @@
-package Wine;
+package com.example.hkonsbockman.wine_v2.leave_it_here_for_now;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 import com.example.hkonsbckman.wine_v2.R;
 
 
-public class WineInfoFragment extends Fragment {
+public class WineInfoFragment extends Fragment  {
 
     public WineInfoFragment() {
 

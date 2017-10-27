@@ -1,4 +1,4 @@
-package Wine;
+package com.example.hkonsbockman.wine_v2;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
