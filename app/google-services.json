@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "871528538621",
+    "firebase_url": "https://winev2-b6c95.firebaseio.com",
+    "project_id": "winev2-b6c95",
+    "storage_bucket": "winev2-b6c95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871528538621:android:2ecfc0b19393817e",
+        "android_client_info": {
+          "package_name": "com.example.hkonsbckman.wine_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871528538621-e6l1ipnb39h6utv7j3df1hha5afu76j3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hkonsbckman.wine_v2",
+            "certificate_hash": "4eff2b1ca5a9a7ebbec9e3c4da3aa1b1fd5ee766"
+          }
+        },
+        {
+          "client_id": "871528538621-t8gpedq90c094t99cp7sr5r6fap8rgpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3J9nVmClJZeKx8qLxg2W6wtaNhv0j2IY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871528538621-t8gpedq90c094t99cp7sr5r6fap8rgpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
