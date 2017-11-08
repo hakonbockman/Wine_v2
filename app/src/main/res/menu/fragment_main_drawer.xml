@@ -3,13 +3,22 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_shows"
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="main screen" />
+        <item
+            android:id="@+id/nav_list_of_all_wines"
             android:icon="@drawable/wine_icon"
             android:title="@string/WineMenuElement_Wines" />
         <item
-            android:id="@+id/nav_lists"
+            android:id="@+id/nav_info_for_one_wine"
             android:icon="@drawable/info_icon"
             android:title="info about one Wine" />
+       <!-- <item
+            android:id="@+id/nav_loadDatabase"
+            android:icon="@android:drawable/stat_notify_error"
+            android:title="load the database" />
+        -->
     </group>
     <item android:title="settings header ( redundant? )">
         <menu>

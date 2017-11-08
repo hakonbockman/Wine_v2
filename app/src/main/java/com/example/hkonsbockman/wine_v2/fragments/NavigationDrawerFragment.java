@@ -1,9 +1,6 @@
 package com.example.hkonsbockman.wine_v2.fragments;
 
-import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -19,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.hkonsbckman.wine_v2.R;
+import com.example.hkonsbockman.wine_v2.MainActivity;
 import com.example.hkonsbockman.wine_v2.WineActivity;
 import com.example.hkonsbockman.wine_v2.leave_it_here_for_now.WineInfoActivity;
 
@@ -59,14 +57,22 @@ public class NavigationDrawerFragment extends Fragment implements NavigationView
         Intent intent;
 
         switch (item.getItemId()) {
-            case R.id.nav_shows:
+            case R.id.nav_home:
+                intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_list_of_all_wines:
                 intent = new Intent(getActivity(), WineActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_lists:
+            case R.id.nav_info_for_one_wine:
                 intent = new Intent(getActivity(), WineInfoActivity.class);
                 startActivity(intent);
                 break;
+       /*     case R.id.nav_loadDatabase:
+                intent = new Intent(getActivity(), WineInfoActivity.class);
+                startActivity(intent);
+                break; */
             case R.id.nav_settings:
                 Toast.makeText(getActivity(), "Opening settings...", Toast.LENGTH_SHORT).show();
                 break;

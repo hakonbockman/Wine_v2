@@ -13,12 +13,4 @@
     tools:context="com.example.hkonsbockman.wine_v2.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shows"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
-
 </RelativeLayout>

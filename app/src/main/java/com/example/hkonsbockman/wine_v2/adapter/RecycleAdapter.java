@@ -77,11 +77,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             imgDelete   = itemView.findViewById(R.id.img_row_delete);
             //imgAdd      = itemView.findViewById(R.id.img_row_add);
         }
-        public void setData(Wine current, int position) {
-            this.title.setText(current.getTitle());
-            imgThumb.setImageResource(current.getImageID());
+        public void setData(Wine wine, int position) {
+            this.title.setText(wine.getTitle());
+            imgThumb.setImageResource(wine.getImageID());
             this.position = position;
-            this.current = current;
+            this.current = wine;
         }
 
         public void setListeners() {

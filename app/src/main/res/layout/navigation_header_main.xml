@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_header_container"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:background="@drawable/wine_poured_into_a_glass">
+    android:layout_height="190dp"
+    android:background="@drawable/wine_wallpaper">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="bottom"
             android:text="Håkon Sørensen Bøckman"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="14sp" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:fontFamily="sans-serif"
             android:gravity="bottom"
             android:text="Hakon.S.Bockman@hiof.no"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="14sp" />
 
 
