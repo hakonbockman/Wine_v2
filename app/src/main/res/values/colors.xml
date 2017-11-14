@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary">#d32f2f</color>
     <color name="colorPrimaryDark">#9a0007</color>
-    <color name="colorAccent">#ff8f00</color>
+    <color name="colorAccent">#FFFFFFFF</color>
 
-    <color name="overflowMenuBg">#ff8f00</color>
+    <color name="overflowMenuBg">#FFFFFFFF</color>
 
     <color name="grey_500">#9E9E9E</color>
 

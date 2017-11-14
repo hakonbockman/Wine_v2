@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Håkon S. Bøckman on 08.11.2017.
@@ -15,37 +13,24 @@ import java.util.List;
 
 public class CSVFile {
     InputStream inputStream;
-    List<Wine> wineList = new ArrayList<Wine>();
+    String csvLine;
+    String[] row;
+    String[] element;
 
     public CSVFile(InputStream inputStream){
         this.inputStream = inputStream;
     }
 
-    public List read(){
-        String csvLine;
-        String[] row;
-        String[] element;
+    public void readLocalFile(){
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        List rowlist = new ArrayList();
-
         try {
             while ((csvLine = reader.readLine()) != null) {
-                row = csvLine.split(" ");
-                rowlist.add(row);
+                row = csvLine.split("\n");
 
-                /*for ( Object row_ :row) {
-                 /*   element = row_.toString().split(";");
-                    for (Object element_:element) {
-                        wineList.add(new Wine(element[0], element[1], element[2], element[3], element[4], element[5]
-                                , element[6], element[7], element[8], element[9], element[10], element[11]
-                                , element[12], element[13], element[14], element[15], element[16], element[17]
-                                , element[18], element[19], element[20], element[21], element[22], element[23]
-                                , element[24], element[25], element[26], element[27], element[28], element[29]
-                                , element[30], element[31], element[32], element[33], element[34], element[35]
-                                ));
-                    }
-                }*/
+                for ( Object row_ :row) {
+                    element = row_.toString().split(";");
+                    createNewWine();
+                }
             }
         }catch (IOException e){
             throw new RuntimeException("Error in reading CSV file" + e);
@@ -57,8 +42,52 @@ public class CSVFile {
                 throw new RuntimeException("Error while closing input stream " + e2);
             }
         }
-
-      //  return wineList;
-        return rowlist;
     }
+
+    public void createNewWine(){
+        Wine temp = new Wine();
+        temp.setDate(element[0]);
+        temp.setVarenummer(element[1]);
+        temp.setVarenavn(element[2]);
+        temp.setVolum(element[3]);
+        temp.setPris(element[4]);
+        temp.setLiterPris(element[5]);
+        temp.setVareType(element[6]);
+        temp.setProduktutvalg(element[7]);
+        temp.setButikkkategori(element[8]);
+        temp.setFylde(element[9]);
+        temp.setFriskhet(element[10]);
+        temp.setGarvestoffer(element[11]);
+        temp.setBitterhet(element[12]);
+        temp.setSodme(element[13]);
+        temp.setFarge(element[14]);
+        temp.setLukt(element[15]);
+        temp.setSmak(element[16]);
+        temp.setPasserTil_1(element[17]);
+        temp.setPasserTil_2(element[18]);
+        temp.setPasserTil_3(element[19]);
+        temp.setLand(element[20]);
+        temp.setDistrikt(element[21]);
+        temp.setUnderdistrikt(element[22]);
+        temp.setArgang(element[23]);
+        temp.setRastoff(element[24]);
+        temp.setMetode(element[25]);
+        temp.setAlkohol(element[26]);
+        temp.setSukker(element[27]);
+        temp.setSyre(element[28]);
+        temp.setLagringsgrad(element[29]);
+        temp.setProdusent(element[30]);
+        temp.setGrossist(element[31]);
+        temp.setDistributor(element[32]);
+        temp.setEmballasjetype(element[33]);
+        temp.setKorktype(element[34]);
+        temp.setVareurl(element[35]);
+    }
+
 }
+
+
+
+
+
+

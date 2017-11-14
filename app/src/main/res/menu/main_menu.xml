@@ -3,9 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/database_load"
+        android:id="@+id/write_to_database"
         android:icon="@drawable/database_icon"
-        android:title="Load from Database"
-        app:showAsAction="always"
+        android:title="Write Wines to database"
+        app:showAsAction="never"
     />
+ <!--   <item
+        android:id="@+id/read_csv_local"
+        android:icon="@drawable/local_file_icon"
+        android:title="Read local CSV file"
+        app:showAsAction="never"
+        />
+     -->
+
 </menu>

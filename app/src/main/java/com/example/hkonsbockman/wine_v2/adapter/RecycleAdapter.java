@@ -73,7 +73,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         public MyViewHolder(View itemView) {
             super(itemView);
             title       = itemView.findViewById(R.id.tvTitle);
-            imgThumb    = itemView.findViewById(R.id.img_row);
+            try {
+                imgThumb    = itemView.findViewById(R.id.img_row);
+            }finally {
+                imgThumb = itemView.findViewById(this.imgThumb.getId());
+            }
             imgDelete   = itemView.findViewById(R.id.img_row_delete);
             //imgAdd      = itemView.findViewById(R.id.img_row_add);
         }
