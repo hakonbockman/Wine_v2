@@ -1,4 +1,4 @@
-package com.example.hkonsbockman.wine_v2.fragments;
+package com.example.hkonsbockman.wine_v2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.MainActivity;
-import com.example.hkonsbockman.wine_v2.WineActivity;
-import com.example.hkonsbockman.wine_v2.leave_it_here_for_now.WineInfoActivity;
+import com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineActivity;
+import com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineInfoActivity;
 
 
 public class NavigationDrawerFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener {

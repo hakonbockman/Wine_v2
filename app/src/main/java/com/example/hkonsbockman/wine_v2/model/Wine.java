@@ -1,5 +1,8 @@
 package com.example.hkonsbockman.wine_v2.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.example.hkonsbckman.wine_v2.R;
 
 import java.util.ArrayList;
@@ -9,10 +12,10 @@ import java.util.List;
  * Created by Håkon S. Bøckman on 16.10.2017.
  */
 
-public class Wine {
+public class Wine implements Parcelable {
 
     private String Date;
-    private String Varenummer;
+    private int Varenummer;
     private String Varenavn;
     private String Volum;
     private String Pris;
@@ -114,7 +117,7 @@ public class Wine {
         this.Date = date;
     }
 
-    public void setVarenummer(String varenummer) {
+    public void setVarenummer(int varenummer) {
         this.Varenummer = varenummer;
     }
 
@@ -258,7 +261,7 @@ public class Wine {
         return Date;
     }
 
-    public String getVarenummer() {
+    public int getVarenummer() {
         return Varenummer;
     }
 
@@ -398,6 +401,15 @@ public class Wine {
         return Vareurl;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }
 
 

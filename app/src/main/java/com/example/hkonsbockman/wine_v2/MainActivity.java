@@ -9,12 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.fragments.NavigationDrawerFragment;
+import com.example.hkonsbockman.wine_v2.ioOperations.CSVFile;
+
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationDrawerFragment navigationDrawerFragment;
-
+    private boolean readFromLocalStorage = true;
+    private CSVFile csvFile;
+    private InputStream inputStream;
 
 
     @Override
@@ -46,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void readFromLocalCSVFile() {
+        if(readFromLocalStorage){
+            inputStream = getResources().openRawResource(R.raw.produkter);
+            csvFile = new CSVFile(inputStream);
+            csvFile.readLocalFile();
+        }
+        readFromLocalStorage = false;
+    }
+
+
     private void setUpDrawer() {
         navigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_fragment);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -57,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         navigationDrawerFragment.updateCheckedItem(R.id.nav_home);
         super.onStart();
     }
+
+
 /*
     @Override
     public boolean onMenuItemClick(MenuItem item) {

@@ -1,9 +1,7 @@
-package com.example.hkonsbockman.wine_v2;
+package com.example.hkonsbockman.wine_v2.ioOperations;
 
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.hkonsbckman.wine_v2.R;
 import com.example.hkonsbockman.wine_v2.model.Wine;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -11,9 +9,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 

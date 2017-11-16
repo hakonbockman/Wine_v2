@@ -1,4 +1,4 @@
-package com.example.hkonsbockman.wine_v2;
+package com.example.hkonsbockman.wine_v2.ioOperations;
 
 import com.example.hkonsbockman.wine_v2.model.Wine;
 
@@ -47,7 +47,7 @@ public class CSVFile {
     public void createNewWine(){
         Wine temp = new Wine();
         temp.setDate(element[0]);
-        temp.setVarenummer(element[1]);
+        temp.setVarenummer(Integer.parseInt(element[1]));
         temp.setVarenavn(element[2]);
         temp.setVolum(element[3]);
         temp.setPris(element[4]);

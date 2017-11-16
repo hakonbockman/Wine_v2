@@ -52,7 +52,7 @@
 
     <fragment
         android:id="@+id/navigation_drawer_fragment"
-        android:name="com.example.hkonsbockman.wine_v2.fragments.NavigationDrawerFragment"
+        android:name="com.example.hkonsbockman.wine_v2.NavigationDrawerFragment"
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

@@ -5,7 +5,7 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@android:drawable/btn_star_big_on"
-            android:title="main screen" />
+            android:title="Main screen" />
         <item
             android:id="@+id/nav_list_of_all_wines"
             android:icon="@drawable/wine_icon"
@@ -13,7 +13,7 @@
         <item
             android:id="@+id/nav_info_for_one_wine"
             android:icon="@drawable/info_icon"
-            android:title="info about one Wine" />
+            android:title="Info about one Wine" />
        <!-- <item
             android:id="@+id/nav_loadDatabase"
             android:icon="@android:drawable/stat_notify_error"
