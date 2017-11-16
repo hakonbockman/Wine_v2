@@ -1,4 +1,4 @@
-package com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments;
+package com.example.hkonsbockman.wine_v2.wine;
 
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import com.example.hkonsbckman.wine_v2.R;
 import com.example.hkonsbockman.wine_v2.ioOperations.DatabaseHandling;
 import com.example.hkonsbockman.wine_v2.model.Wine;
 
-public class WineActivity extends AppCompatActivity implements  WineListFragment.OnWineFragmentInteractionListener {
+public class WineActivity extends AppCompatActivity implements WineListFragment.OnWineFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class WineActivity extends AppCompatActivity implements  WineListFragment
 
             wineInfoFragment.setDisplayedDetail(wine);
         }
+
         else{
             Intent intent = new Intent(this, WineInfoActivity.class);
             intent.putExtra("wine", wine);

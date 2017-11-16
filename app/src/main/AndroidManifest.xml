@@ -16,9 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineInfoActivity" />
+        <activity android:name="com.example.hkonsbockman.wine_v2.wine.WineInfoActivity" />
         <activity
-            android:name="com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineActivity"
+            android:name="com.example.hkonsbockman.wine_v2.wine.WineActivity"
             android:label="@string/title_activity_wine"></activity>
     </application>
 

@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineActivity;
-import com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineInfoActivity;
+import com.example.hkonsbockman.wine_v2.wine.WineActivity;
+import com.example.hkonsbockman.wine_v2.wine.WineInfoActivity;
 
 
 public class NavigationDrawerFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener {

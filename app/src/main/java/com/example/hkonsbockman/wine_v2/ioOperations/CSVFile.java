@@ -1,6 +1,6 @@
 package com.example.hkonsbockman.wine_v2.ioOperations;
 
-import com.example.hkonsbockman.wine_v2.model.Wine;
+import com.example.hkonsbockman.wine_v2.Wine;
 
 import java.io.BufferedReader;
 import java.io.IOException;

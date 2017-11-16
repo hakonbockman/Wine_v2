@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.model.Wine;
+import com.example.hkonsbockman.wine_v2.Wine;
 
 /**
  * Created by Håkon S. Bøckman on 15.11.2017.

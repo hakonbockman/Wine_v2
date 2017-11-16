@@ -6,7 +6,6 @@ import android.os.Parcelable;
 import com.example.hkonsbckman.wine_v2.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Håkon S. Bøckman on 16.10.2017.
@@ -60,6 +59,60 @@ public class Wine implements Parcelable {
     public Wine(){
         wineList.add(this);
         this.setImageID(wine_icon_id);
+    };
+
+    protected Wine(Parcel in) {
+        Date = in.readString();
+        Varenummer = in.readInt();
+        Varenavn = in.readString();
+        Volum = in.readString();
+        Pris = in.readString();
+        LiterPris = in.readString();
+        VareType = in.readString();
+        Produktutvalg = in.readString();
+        Butikkkategori = in.readString();
+        Fylde = in.readString();
+        Friskhet = in.readString();
+        Garvestoffer = in.readString();
+        Bitterhet = in.readString();
+        Sodme = in.readString();
+        Farge = in.readString();
+        Lukt = in.readString();
+        Smak = in.readString();
+        PasserTil_1 = in.readString();
+        PasserTil_2 = in.readString();
+        PasserTil_3 = in.readString();
+        Land = in.readString();
+        Distrikt = in.readString();
+        Underdistrikt = in.readString();
+        Argang = in.readString();
+        Rastoff = in.readString();
+        Metode = in.readString();
+        Alkohol = in.readString();
+        Sukker = in.readString();
+        Syre = in.readString();
+        Lagringsgrad = in.readString();
+        Produsent = in.readString();
+        Grossist = in.readString();
+        Distributor = in.readString();
+        Emballasjetype = in.readString();
+        Korktype = in.readString();
+        Vareurl = in.readString();
+        wine_icon_id = in.readInt();
+        title = in.readString();
+        imageID = in.readInt();
+    }
+
+    public static final Creator<Wine> CREATOR = new Creator<Wine>() {
+        @Override
+        public Wine createFromParcel(Parcel in) {
+            return new Wine(in);
+        }
+
+        @Override
+        public Wine[] newArray(int size) {
+            return new Wine[size];
+        }
     };
 
     public static ArrayList<Wine> getWineList() {
@@ -408,7 +461,45 @@ public class Wine implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(Date);
+        dest.writeInt(Varenummer);
+        dest.writeString(Varenavn);
+        dest.writeString(Volum);
+        dest.writeString(Pris);
+        dest.writeString(LiterPris);
+        dest.writeString(VareType);
+        dest.writeString(Produktutvalg);
+        dest.writeString(Butikkkategori);
+        dest.writeString(Fylde);
+        dest.writeString(Friskhet);
+        dest.writeString(Garvestoffer);
+        dest.writeString(Bitterhet);
+        dest.writeString(Sodme);
+        dest.writeString(Farge);
+        dest.writeString(Lukt);
+        dest.writeString(Smak);
+        dest.writeString(PasserTil_1);
+        dest.writeString(PasserTil_2);
+        dest.writeString(PasserTil_3);
+        dest.writeString(Land);
+        dest.writeString(Distrikt);
+        dest.writeString(Underdistrikt);
+        dest.writeString(Argang);
+        dest.writeString(Rastoff);
+        dest.writeString(Metode);
+        dest.writeString(Alkohol);
+        dest.writeString(Sukker);
+        dest.writeString(Syre);
+        dest.writeString(Lagringsgrad);
+        dest.writeString(Produsent);
+        dest.writeString(Grossist);
+        dest.writeString(Distributor);
+        dest.writeString(Emballasjetype);
+        dest.writeString(Korktype);
+        dest.writeString(Vareurl);
+        dest.writeInt(wine_icon_id);
+        dest.writeString(title);
+        dest.writeInt(imageID);
     }
 }
 

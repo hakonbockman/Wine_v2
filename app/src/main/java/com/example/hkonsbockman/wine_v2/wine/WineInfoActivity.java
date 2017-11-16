@@ -1,11 +1,11 @@
-package com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments;
+package com.example.hkonsbockman.wine_v2.wine;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.model.Wine;
+import com.example.hkonsbockman.wine_v2.Wine;
 
 public class WineInfoActivity extends AppCompatActivity {
 

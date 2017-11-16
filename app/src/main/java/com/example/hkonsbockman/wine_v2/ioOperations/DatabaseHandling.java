@@ -2,7 +2,7 @@ package com.example.hkonsbockman.wine_v2.ioOperations;
 
 import android.util.Log;
 
-import com.example.hkonsbockman.wine_v2.model.Wine;
+import com.example.hkonsbockman.wine_v2.Wine;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

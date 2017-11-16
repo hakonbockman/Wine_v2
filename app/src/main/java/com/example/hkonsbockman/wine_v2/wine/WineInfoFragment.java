@@ -1,9 +1,8 @@
-package com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments;
+package com.example.hkonsbockman.wine_v2.wine;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.model.Wine;
+import com.example.hkonsbockman.wine_v2.Wine;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments.WineActivity">
+    tools:context="com.example.hkonsbockman.wine_v2.wine.WineActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -22,6 +22,6 @@
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        tools:layout="@layout/fragment_navigation_drawer" />
+        tools:layout="@layout/fragment_wine_info" />
 
 </LinearLayout>

@@ -1,20 +1,19 @@
-package com.example.hkonsbockman.wine_v2.WineActivitiesANDFragments;
+package com.example.hkonsbockman.wine_v2.wine;
 
         import android.app.Fragment;
-        import android.os.Build;
-        import android.os.Bundle;
-        import android.support.annotation.RequiresApi;
-        import android.support.v7.widget.GridLayoutManager;
-        import android.support.v7.widget.RecyclerView;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Toast;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
-        import com.example.hkonsbckman.wine_v2.R;
-        import com.example.hkonsbockman.wine_v2.adapter.OnWineSelectedListener;
-        import com.example.hkonsbockman.wine_v2.adapter.RecycleAdapterListener;
-        import com.example.hkonsbockman.wine_v2.adapter.WineRecycleAdapter;
+import com.example.hkonsbckman.wine_v2.R;
+import com.example.hkonsbockman.wine_v2.adapter.RecycleAdapterListener;
+import com.example.hkonsbockman.wine_v2.adapter.WineRecycleAdapter;
         import com.example.hkonsbockman.wine_v2.model.Wine;
 
 /**
@@ -62,6 +61,7 @@ public class WineListFragment extends Fragment implements RecycleAdapterListener
     @Override
     public void wineSelected(Wine wine) {
         Toast.makeText(getContext(), wine.getVarenavn() + " selected", Toast.LENGTH_SHORT).show();
+
         listener.onWineSelected(wine);
     }
 
