@@ -1,11 +1,12 @@
 package com.example.hkonsbockman.wine_v2;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.os.Bundle;
 import android.view.View;
 
 import com.example.hkonsbckman.wine_v2.R;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // read local file
+        readFromLocalCSVFile();
+
         // set find the view who has the toolbar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Wine'O");
@@ -42,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Hello, I'm a snackbar!", Snackbar.LENGTH_LONG)
-                        .setAction("Kill", new MyActionListener()).show();
+               Intent intent = new Intent(getBaseContext(), CameraActivity.class);
+                startActivity(intent);
             }
         });
 

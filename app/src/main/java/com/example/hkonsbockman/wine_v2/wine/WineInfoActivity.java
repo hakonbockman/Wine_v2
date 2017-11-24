@@ -5,7 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.Wine;
+import com.example.hkonsbockman.wine_v2.model.Wine;
+
 
 public class WineInfoActivity extends AppCompatActivity {
 

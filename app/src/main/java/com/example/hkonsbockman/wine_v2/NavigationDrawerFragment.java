@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.example.hkonsbckman.wine_v2.R;
 import com.example.hkonsbockman.wine_v2.wine.WineActivity;
-import com.example.hkonsbockman.wine_v2.wine.WineInfoActivity;
 
 
 public class NavigationDrawerFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,10 +63,10 @@ public class NavigationDrawerFragment extends Fragment implements NavigationView
                 intent = new Intent(getActivity(), WineActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_info_for_one_wine:
-                intent = new Intent(getActivity(), WineInfoActivity.class);
-                startActivity(intent);
-                break;
+          //  case R.id.nav_info_for_one_wine:
+          //      intent = new Intent(getActivity(), WineInfoActivity.class);
+          //      startActivity(intent);
+          //      break;
        /*     case R.id.nav_loadDatabase:
                 intent = new Intent(getActivity(), WineInfoActivity.class);
                 startActivity(intent);

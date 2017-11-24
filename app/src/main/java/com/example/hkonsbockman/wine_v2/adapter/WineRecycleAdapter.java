@@ -7,16 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.Wine;
+import com.example.hkonsbockman.wine_v2.model.Wine;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Håkon S. Bøckman on 13.10.2017.
  */
 
-public class WineRecycleAdapter extends RecyclerView.Adapter<WineViewHolder> {
-    private List<Wine> wineList;
+public class WineRecycleAdapter extends RecyclerView.Adapter<WineViewHolder>{
+    private List<Wine> wineList = new ArrayList<>();
+    private List<Wine> wineListCopy = new ArrayList<>();
     private LayoutInflater inflater;
     private OnWineSelectedListener onWineSelectedListener;
     private RecycleAdapterListener recycleAdapterListener;
@@ -27,17 +29,36 @@ public class WineRecycleAdapter extends RecyclerView.Adapter<WineViewHolder> {
         this.inflater = LayoutInflater.from(context);
         this.recycleAdapterListener = extRecycleAdapterListener;
 
-        onWineSelectedListener = (OnWineSelectedListener) (position) ->{
-            Wine wine = wineList.get(position);
-            recycleAdapterListener.wineSelected(wine);
+        onWineSelectedListener = new OnWineSelectedListener() {
+            @Override
+            public void wineSelected(int position) {
+                Wine wine = wineList.get(position);
+                recycleAdapterListener.wineSelected(wine);
+            }
         };
+        // proper copy of the wine class's static list
+        wineListCopy = cloneWineList(data);
+    }
+
+    /**
+     *  Takes in a ArrayList<Wine> and returns a copy of that list, as List<Wine>
+     *  Uses its own constructor of Wine: Wine( Wine wine), hence since wine.clone()
+     *  was not possible to implement because of protection of the method. Honestly
+     *  I don't get the protection and a proper work around.
+     * @param list
+     * @return
+     */
+    private static List<Wine> cloneWineList(List<Wine> list){
+        ArrayList<Wine> clone_list = new ArrayList<Wine>(list.size());
+        for(Wine item : list) clone_list.add(new Wine(item));
+        return clone_list;
     }
 
     @Override
     public WineViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.wine_list_item, parent, false);
-        WineViewHolder holder = new WineViewHolder(view);
 
+        WineViewHolder holder = new WineViewHolder(view);
         view.setOnClickListener(holder);
 
         return holder;
@@ -53,96 +74,25 @@ public class WineRecycleAdapter extends RecyclerView.Adapter<WineViewHolder> {
     public int getItemCount() {
         return wineList.size();
     }
+
+    /**
+     * Adding the elements from the list, to the current recycleView's list. Expects a list<Wine>
+     * This method is used only within WineListFragment.sortListDependingOnTheTextInput, and that
+     * method is called from WineActivity.onQueryTextChange and onQueryTextSubmit. Unsure if Submit
+     * works properly.
+     * TODO: Find out why the resulting recycle view generate a extra copy of chosen object
+     * TODO: After you go back from WineInfoActivity and WineInfoFragment it should generate
+     * TODO: The whole list.
+     * @param newList
+     */
+    public void setFilter(List<Wine> newList){
+        if(newList.isEmpty()){
+            wineList.clear();
+            wineList.addAll(wineListCopy);
+        }else{
+            wineList.clear();
+            wineList.addAll(newList);
+        }
+        notifyDataSetChanged();
+    }
 }
-
-/*
- *  private static final String TAG = WineRecycleAdapter.class.getSimpleName();
-
- List<Wine> _wineList;
- private LayoutInflater inflater;
-
- public WineRecycleAdapter(Context context , List<Wine> _wineList) {
- this._wineList = _wineList;
- inflater = LayoutInflater.from(context);
- }
-
-
- @Override
- public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
- View view = inflater.inflate(R.layout.list_item, parent, false);
- MyViewHolder holder = new MyViewHolder(view);
- return holder;
- }
-
- @Override
- public void onBindViewHolder(WineRecycleAdapter.MyViewHolder holder, int position) {
-
- Wine current = _wineList.get(position);
- holder.setData(current, position);
- holder.setListeners();
- }
-
- public void removeItem(int position) {
- _wineList.remove(position);
- notifyItemRemoved(position);
- notifyItemRangeChanged(position, _wineList.size());
- }
-
- public void addItem(int position, Wine landscape) {
- _wineList.add(position, landscape);
- notifyItemInserted(position);
- notifyItemRangeChanged(position, _wineList.size());
- }
-
- @Override
- public int getItemCount() {
- return _wineList.size();
- }
-
- class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
- TextView title;
- ImageView imgThumb, imgDelete, imgAdd;
- int position;
- Wine current;
-
- WineActivity wineActivity = new WineActivity();
-
- public MyViewHolder(View itemView) {
- super(itemView);
- title       = itemView.findViewById(R.id.tvTitle);
- try {
- imgThumb    = itemView.findViewById(R.id.img_row);
- }finally {
- imgThumb = itemView.findViewById(this.imgThumb.getId());
- }
- imgDelete   = itemView.findViewById(R.id.img_row_delete);
- //imgAdd      = itemView.findViewById(R.id.img_row_add);
- }
- public void setData(Wine wine, int position) {
- this.title.setText(wine.getVarenavn());
- imgThumb.setImageResource(wine.getImageID());
- this.position = position;
- this.current = wine;
- }
-
- public void setListeners() {
- imgDelete.setOnClickListener(MyViewHolder.this);
- //   imgAdd.setOnClickListener(MyViewHolder.this);
- }
-
- @Override
- public void onClick(View v) {
- switch (v.getId()) {
- case R.id.img_row_delete:
- removeItem(position);
- break;
- case R.id.tvTitle:
- //addItem(position, current);
- Wine wine =_wineList.get(position);
- wineActivity.lezzgo(wine);
- break;
- }
- }
- }
- * **********************************************/

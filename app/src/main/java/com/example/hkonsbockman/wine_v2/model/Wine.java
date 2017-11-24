@@ -53,13 +53,53 @@ public class Wine implements Parcelable {
     private int wine_icon_id = R.drawable.wine_icon;
     private String title;
     private int imageID;
-    private static ArrayList<Wine> wineList = new ArrayList<Wine>();
+    private static ArrayList<Wine> wineList = new ArrayList<>();
 
 
     public Wine(){
         wineList.add(this);
         this.setImageID(wine_icon_id);
-    };
+    }
+
+    public Wine(Wine wine){
+        this.Date = wine.Date;
+        this.Varenummer = wine.Varenummer;
+        this.Varenavn = wine.Varenavn;
+        this.Volum = wine.Volum;
+        this.Pris = wine.Pris;
+        this.LiterPris = wine.LiterPris;
+        this.VareType = wine.VareType;
+        this.Produktutvalg = wine.Produktutvalg;
+        this.Butikkkategori = wine.Butikkkategori;
+        this.Fylde = wine.Fylde;
+        this.Friskhet = wine.Friskhet;
+        this.Garvestoffer = wine.Garvestoffer;
+        this.Bitterhet = wine.Bitterhet;
+        this.Sodme = wine.Sodme;
+        this.Farge = wine.Farge;
+        this.Lukt = wine.Lukt;
+        this.Smak = wine.Smak;
+        this.PasserTil_1 = wine.PasserTil_1;
+        this.PasserTil_2 = wine.PasserTil_2;
+        this.PasserTil_3 = wine.PasserTil_3;
+        this.Land = wine.Land;
+        this.Distrikt = wine.Distrikt;
+        this.Underdistrikt = wine.Underdistrikt;
+        this.Argang = wine.Argang;
+        this.Rastoff = wine.Rastoff;
+        this.Metode = wine.Metode;
+        this.Alkohol = wine.Alkohol;
+        this.Sukker = wine.Sukker;
+        this.Syre = wine.Syre;
+        this.Lagringsgrad = wine.Lagringsgrad;
+        this.Produsent = wine.Produsent;
+        this.Grossist = wine.Grossist;
+        this.Distributor = wine.Distributor;
+        this.Emballasjetype = wine.Emballasjetype;
+        this.Korktype = wine.Korktype;
+        this.Vareurl = wine.Vareurl;
+        this.setImageID(wine_icon_id);
+    }
 
     protected Wine(Parcel in) {
         Date = in.readString();
@@ -101,6 +141,7 @@ public class Wine implements Parcelable {
         wine_icon_id = in.readInt();
         title = in.readString();
         imageID = in.readInt();
+        wineList.add(this);
     }
 
     public static final Creator<Wine> CREATOR = new Creator<Wine>() {

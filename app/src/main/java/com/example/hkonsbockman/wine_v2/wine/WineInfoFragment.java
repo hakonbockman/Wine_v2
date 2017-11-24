@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hkonsbckman.wine_v2.R;
-import com.example.hkonsbockman.wine_v2.Wine;
+import com.example.hkonsbockman.wine_v2.model.Wine;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class WineInfoFragment extends Fragment  {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        wineList = Wine.getWineList();
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_wine_info, container, false);
 

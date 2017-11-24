@@ -1,6 +1,8 @@
 package com.example.hkonsbockman.wine_v2.ioOperations;
 
-import com.example.hkonsbockman.wine_v2.Wine;
+import android.util.Log;
+
+import com.example.hkonsbockman.wine_v2.model.Wine;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,9 +47,23 @@ public class CSVFile {
     }
 
     public void createNewWine(){
+        int temp_int = 0;
+
+
         Wine temp = new Wine();
         temp.setDate(element[0]);
-        temp.setVarenummer(Integer.parseInt(element[1]));
+
+        if(element[1] != null){
+            try{
+                temp_int = Integer.parseInt(element[1]);
+            }catch (NumberFormatException e){
+                Log.e("Cant parse string to int", "cant parse actual letters to ints");
+                temp_int = 0;
+            }
+        }
+        temp.setVarenummer(temp_int);
+
+
         temp.setVarenavn(element[2]);
         temp.setVolum(element[3]);
         temp.setPris(element[4]);
