@@ -33,17 +33,6 @@ public class WineViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         this.title.setText(wine.getVarenavn());
         this.poster.setImageResource(wine.getImageID());
         this.onWineSelectedListener = listener;
-
-        String colour = wine.getFarge();
-        String red = "rød";
-        String yellow = "gul";
-        String blue = "blå";
-     /*   switch(colour.trim().toLowerCase()){
-            // TODO: case + what can be equal to the colour String.
-            case contains(red.toLowerCase());
-                    this.relativeLayout.setBackgroundColor(RED);
-
-        } */
     }
 
     @Override
