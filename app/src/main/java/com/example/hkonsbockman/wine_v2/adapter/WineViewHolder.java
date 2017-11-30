@@ -1,5 +1,6 @@
 package com.example.hkonsbockman.wine_v2.adapter;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,12 +20,13 @@ public class WineViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     private ImageView poster;
     private OnWineSelectedListener onWineSelectedListener;
     private RelativeLayout relativeLayout;
+    private ConstraintLayout constraintLayout;
 
     public WineViewHolder(View itemView){
         super(itemView);
         title = itemView.findViewById(R.id.wine_list_item_textView_title);
         poster = itemView.findViewById(R.id.wine_list_item_image);
-        relativeLayout = itemView.findViewById(R.id.wine_list_item_constraintLayout);
+        constraintLayout = itemView.findViewById(R.id.wine_list_item_constraintLayout);
        // ArrayList<Wine> wineArrayList = Wine.getWineList();
 
     }

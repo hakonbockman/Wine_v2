@@ -4,52 +4,259 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.hkonsbockman.wine_v2.wine.WineInfoActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="212dp"
-        android:src="@drawable/wine1"
         android:id="@+id/Wine_info_fragment_picture"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_title"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/wine1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_title" />
 
     <TextView
         android:id="@+id/Wine_info_fragment_title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Wine 1"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Wine_info_fragment_description"
-        android:layout_width="351dp"
-        android:layout_height="136dp"
-        android:layout_marginBottom="92dp"
+        android:id="@+id/Wine_info_fragment_taste"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="-62dp"
         android:layout_marginTop="8dp"
-        android:text="@string/LoremIpsum"
+        android:text="Taste"
         android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_picture"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_picture" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_taste">
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_colour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Colour: "
+            tools:layout_editor_absoluteY="306dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year:"
+            tools:layout_editor_absoluteY="324dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_Country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country:"
+            tools:layout_editor_absoluteY="371dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Region:"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume:"
+            tools:layout_editor_absoluteY="465dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            tools:layout_editor_absoluteY="512dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_taste">
+
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_colour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="324dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="324dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="371dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="465dp" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="512dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_taste">
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_fits1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Food Alternative 1:"
+            app:layout_constraintBottom_toTopOf="@+id/Wine_info_fragment_fits1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_colour"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_taste"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_fits1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/Wine_info_fragment_placeHolder_fits2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_year"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_placeHolder_fits1" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_fits2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Alternative 2:"
+            app:layout_constraintBottom_toTopOf="@+id/Wine_info_fragment_fits2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_country"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_fits1" />
+
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_fits2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/Wine_info_fragment_placeHolder_fits3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_region"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_placeHolder_fits2" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_placeHolder_fits3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Alternative 3:"
+            app:layout_constraintBottom_toTopOf="@+id/Wine_info_fragment_fits3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_volume"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_fits2" />
+
+        <TextView
+            android:id="@+id/Wine_info_fragment_fits3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Wine_info_fragment_price"
+            app:layout_constraintTop_toBottomOf="@+id/Wine_info_fragment_placeHolder_fits3" />
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

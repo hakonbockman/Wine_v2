@@ -12,7 +12,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.example.hkonsbckman.wine_v2.R;
 import com.example.hkonsbockman.wine_v2.model.Wine;
 import com.example.hkonsbockman.wine_v2.wine.WineInfoActivity;
 import com.google.zxing.Result;
@@ -49,7 +48,7 @@ public class CameraActivity extends AppCompatActivity implements ZXingScannerVie
 
     private void requestPermission(){
         ActivityCompat.requestPermissions(this, new String[]{CAMERA}, REQUEST_CAMERA);
-        buildNotification("Camera accessed", "The Wine'O application has now access to your phones rear camera.", R.drawable.ic_camera_notifications);
+       // buildNotification("Camera accessed", "The Wine'O application has now access to your phones rear camera.", R.drawable.ic_camera_notifications);
     }
 
     public void onRequestPermissionResult(final int requestCode, String permissions, int grantResults[]){
@@ -90,7 +89,6 @@ public class CameraActivity extends AppCompatActivity implements ZXingScannerVie
     @Override
     public void onResume(){
         super.onResume();
-
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if(checkPermission()){
                 if(scannerView == null){
@@ -132,15 +130,16 @@ public class CameraActivity extends AppCompatActivity implements ZXingScannerVie
                 scannerView.resumeCameraPreview(CameraActivity.this);
             }
         });
+
         builder.setNeutralButton("Create a new Wine", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 goToCreateWineActivity(scanResult);
-                /*
+              /*
                 Intent intent = new Intent(this, CreateWineActivity.class);
                 intent.putExtra("vareNummer", scanResult);
                 startActivity(intent);
-                */
+               */
             }
         });
         builder.setMessage(scanResult);

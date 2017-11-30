@@ -1,8 +1,6 @@
 package com.example.hkonsbockman.wine_v2.wine;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -69,7 +67,7 @@ public class WineListFragment extends Fragment implements RecycleAdapterListener
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+   // @RequiresApi(api = Build.VERSION_CODES.M)
     public void setUpRecycleView(View view) {
         recyclerView = view.findViewById(R.id.wine_recycler_view);
         adapter = new WineRecycleAdapter(getContext(), Wine.getWineList(), this);
@@ -77,7 +75,6 @@ public class WineListFragment extends Fragment implements RecycleAdapterListener
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
-
 
     }
 
@@ -99,17 +96,17 @@ public class WineListFragment extends Fragment implements RecycleAdapterListener
         newText = newText.toLowerCase();
 
         if(newText.trim().isEmpty()){
-            adapter.setFilter(wineListCopy);
+            newList.addAll(wineListCopy);
         }else{
 
             newList.clear();
             for(Wine wine : wineList){
-                if(wine.getVarenavn().trim().contains(newText) ){
+                if(wine.getVarenavn().toLowerCase().contains(newText) ){
                     newList.add(wine);
                 }
             }
-            if(newList.isEmpty() && newText.trim().isEmpty()){
-                adapter.setFilter(wineListCopy);
+            if(newList.isEmpty()){
+                newList.addAll(wineListCopy);
             }
         }
         adapter.setFilter(newList);

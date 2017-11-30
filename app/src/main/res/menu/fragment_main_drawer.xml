@@ -20,7 +20,7 @@
              android:title="load the database" />
          -->
     </group>
-    <item android:title="settings header ( redundant? )">
+    <item android:title="settings">
         <menu>
             <item
                 android:id="@+id/nav_settings"

@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.hkonsbockman.wine_v2.wine.WineInfoActivity">
 
-    <include
+    <!-- <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
-
+       -->
     <fragment
         android:id="@+id/activity_wine_info_fragment_xml_tag"
         android:layout_width="wrap_content"

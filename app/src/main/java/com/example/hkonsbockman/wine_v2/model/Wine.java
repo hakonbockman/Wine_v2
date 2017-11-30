@@ -1,5 +1,6 @@
 package com.example.hkonsbockman.wine_v2.model;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -54,95 +55,40 @@ public class Wine implements Parcelable {
     private String title;
     private int imageID;
     private static ArrayList<Wine> wineList = new ArrayList<>();
+    private Bitmap thumbnail;
+    private Bitmap picture;
+    private String picturePATH;
 
+    public String getPicturePATH() {
+        return picturePATH;
+    }
+
+    public void setPicturePATH(String picturePATH) {
+        this.picturePATH = picturePATH;
+    }
+
+    public Bitmap getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(Bitmap thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public Bitmap getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Bitmap picture) {
+        this.picture = picture;
+    }
 
     public Wine(){
         wineList.add(this);
         this.setImageID(wine_icon_id);
     }
 
-    public Wine(Wine wine){
-        this.Date = wine.Date;
-        this.Varenummer = wine.Varenummer;
-        this.Varenavn = wine.Varenavn;
-        this.Volum = wine.Volum;
-        this.Pris = wine.Pris;
-        this.LiterPris = wine.LiterPris;
-        this.VareType = wine.VareType;
-        this.Produktutvalg = wine.Produktutvalg;
-        this.Butikkkategori = wine.Butikkkategori;
-        this.Fylde = wine.Fylde;
-        this.Friskhet = wine.Friskhet;
-        this.Garvestoffer = wine.Garvestoffer;
-        this.Bitterhet = wine.Bitterhet;
-        this.Sodme = wine.Sodme;
-        this.Farge = wine.Farge;
-        this.Lukt = wine.Lukt;
-        this.Smak = wine.Smak;
-        this.PasserTil_1 = wine.PasserTil_1;
-        this.PasserTil_2 = wine.PasserTil_2;
-        this.PasserTil_3 = wine.PasserTil_3;
-        this.Land = wine.Land;
-        this.Distrikt = wine.Distrikt;
-        this.Underdistrikt = wine.Underdistrikt;
-        this.Argang = wine.Argang;
-        this.Rastoff = wine.Rastoff;
-        this.Metode = wine.Metode;
-        this.Alkohol = wine.Alkohol;
-        this.Sukker = wine.Sukker;
-        this.Syre = wine.Syre;
-        this.Lagringsgrad = wine.Lagringsgrad;
-        this.Produsent = wine.Produsent;
-        this.Grossist = wine.Grossist;
-        this.Distributor = wine.Distributor;
-        this.Emballasjetype = wine.Emballasjetype;
-        this.Korktype = wine.Korktype;
-        this.Vareurl = wine.Vareurl;
-        this.setImageID(wine_icon_id);
-    }
 
-    protected Wine(Parcel in) {
-        Date = in.readString();
-        Varenummer = in.readInt();
-        Varenavn = in.readString();
-        Volum = in.readString();
-        Pris = in.readString();
-        LiterPris = in.readString();
-        VareType = in.readString();
-        Produktutvalg = in.readString();
-        Butikkkategori = in.readString();
-        Fylde = in.readString();
-        Friskhet = in.readString();
-        Garvestoffer = in.readString();
-        Bitterhet = in.readString();
-        Sodme = in.readString();
-        Farge = in.readString();
-        Lukt = in.readString();
-        Smak = in.readString();
-        PasserTil_1 = in.readString();
-        PasserTil_2 = in.readString();
-        PasserTil_3 = in.readString();
-        Land = in.readString();
-        Distrikt = in.readString();
-        Underdistrikt = in.readString();
-        Argang = in.readString();
-        Rastoff = in.readString();
-        Metode = in.readString();
-        Alkohol = in.readString();
-        Sukker = in.readString();
-        Syre = in.readString();
-        Lagringsgrad = in.readString();
-        Produsent = in.readString();
-        Grossist = in.readString();
-        Distributor = in.readString();
-        Emballasjetype = in.readString();
-        Korktype = in.readString();
-        Vareurl = in.readString();
-        wine_icon_id = in.readInt();
-        title = in.readString();
-        imageID = in.readInt();
-        wineList.add(this);
-    }
 
     public static final Creator<Wine> CREATOR = new Creator<Wine>() {
         @Override
@@ -541,6 +487,89 @@ public class Wine implements Parcelable {
         dest.writeInt(wine_icon_id);
         dest.writeString(title);
         dest.writeInt(imageID);
+    }
+
+    public Wine(Wine wine){
+        this.Date = wine.Date;
+        this.Varenummer = wine.Varenummer;
+        this.Varenavn = wine.Varenavn;
+        this.Volum = wine.Volum;
+        this.Pris = wine.Pris;
+        this.LiterPris = wine.LiterPris;
+        this.VareType = wine.VareType;
+        this.Produktutvalg = wine.Produktutvalg;
+        this.Butikkkategori = wine.Butikkkategori;
+        this.Fylde = wine.Fylde;
+        this.Friskhet = wine.Friskhet;
+        this.Garvestoffer = wine.Garvestoffer;
+        this.Bitterhet = wine.Bitterhet;
+        this.Sodme = wine.Sodme;
+        this.Farge = wine.Farge;
+        this.Lukt = wine.Lukt;
+        this.Smak = wine.Smak;
+        this.PasserTil_1 = wine.PasserTil_1;
+        this.PasserTil_2 = wine.PasserTil_2;
+        this.PasserTil_3 = wine.PasserTil_3;
+        this.Land = wine.Land;
+        this.Distrikt = wine.Distrikt;
+        this.Underdistrikt = wine.Underdistrikt;
+        this.Argang = wine.Argang;
+        this.Rastoff = wine.Rastoff;
+        this.Metode = wine.Metode;
+        this.Alkohol = wine.Alkohol;
+        this.Sukker = wine.Sukker;
+        this.Syre = wine.Syre;
+        this.Lagringsgrad = wine.Lagringsgrad;
+        this.Produsent = wine.Produsent;
+        this.Grossist = wine.Grossist;
+        this.Distributor = wine.Distributor;
+        this.Emballasjetype = wine.Emballasjetype;
+        this.Korktype = wine.Korktype;
+        this.Vareurl = wine.Vareurl;
+        this.setImageID(wine_icon_id);
+    }
+
+    protected Wine(Parcel in) {
+        Date = in.readString();
+        Varenummer = in.readInt();
+        Varenavn = in.readString();
+        Volum = in.readString();
+        Pris = in.readString();
+        LiterPris = in.readString();
+        VareType = in.readString();
+        Produktutvalg = in.readString();
+        Butikkkategori = in.readString();
+        Fylde = in.readString();
+        Friskhet = in.readString();
+        Garvestoffer = in.readString();
+        Bitterhet = in.readString();
+        Sodme = in.readString();
+        Farge = in.readString();
+        Lukt = in.readString();
+        Smak = in.readString();
+        PasserTil_1 = in.readString();
+        PasserTil_2 = in.readString();
+        PasserTil_3 = in.readString();
+        Land = in.readString();
+        Distrikt = in.readString();
+        Underdistrikt = in.readString();
+        Argang = in.readString();
+        Rastoff = in.readString();
+        Metode = in.readString();
+        Alkohol = in.readString();
+        Sukker = in.readString();
+        Syre = in.readString();
+        Lagringsgrad = in.readString();
+        Produsent = in.readString();
+        Grossist = in.readString();
+        Distributor = in.readString();
+        Emballasjetype = in.readString();
+        Korktype = in.readString();
+        Vareurl = in.readString();
+        wine_icon_id = in.readInt();
+        title = in.readString();
+        imageID = in.readInt();
+        wineList.add(this);
     }
 }
 

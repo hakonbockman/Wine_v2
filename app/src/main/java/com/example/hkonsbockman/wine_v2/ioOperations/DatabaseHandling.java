@@ -16,10 +16,13 @@ import static android.content.ContentValues.TAG;
 
 /**
  * Created by Håkon S. Bøckman on 14.11.2017.
+ *
  */
 
 public class DatabaseHandling {
     private static FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+    public DatabaseHandling() {/* empty */}
 
     public static void writeWineToDatabase(ArrayList<Wine> inputArray, String Reference){
          firebaseDatabase = FirebaseDatabase.getInstance();
@@ -55,5 +58,5 @@ public class DatabaseHandling {
 
 
 
-    public DatabaseHandling() {}
+
 }

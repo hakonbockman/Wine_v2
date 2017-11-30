@@ -1,5 +1,6 @@
 package com.example.hkonsbockman.wine_v2.wine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.hkonsbckman.wine_v2.R;
 import com.example.hkonsbockman.wine_v2.model.Wine;
 
+import java.util.List;
 
-public class WineInfoActivity extends AppCompatActivity {
+import pub.devrel.easypermissions.EasyPermissions;
 
-    Wine wine;
+
+public class WineInfoActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+
+    private Wine wine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,46 +29,23 @@ public class WineInfoActivity extends AppCompatActivity {
         WineInfoFragment wineInfoFragment = (WineInfoFragment) fragmentManager.findFragmentById(R.id.activity_wine_info_fragment_xml_tag);
 
         wineInfoFragment.setDisplayedDetail(wine);
-
     }
-}
 
-
-    /*
     @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.WineMenuElement_allWines:
-                Intent intent = new Intent(this, WineActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.WineMenuElement_wineInfo:
-                Intent intent2 = new Intent(this, WineInfoActivity.class);
-                startActivity(intent2);
-                break;
-        }
-        return true;
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
-    */
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+
+    }
 
 
-/*
-
-        fragmentManager = getFragmentManager();
-        WineInfoFragment wineInfoFragment = new WineInfoFragment();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.wine_info_fragment_XML_tag, wineInfoFragment, "wine_info_fragment");
-        //fragmentTransaction.addToBackStack("wine_info_fragment"); // if you keep this line we get duplicate in stack..so I have a stack without requesting one. Great..
-        fragmentTransaction.commit();
-
-        // set find the view who has the toolbar.
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        toolbar.setTitle("Wine'O");
-*/
-
-
-
-//get the design of the toolbar/menu
-//  toolbar.inflateMenu(R.menu.main_menu);
-//  toolbar.setOnMenuItemClickListener(this);
+}

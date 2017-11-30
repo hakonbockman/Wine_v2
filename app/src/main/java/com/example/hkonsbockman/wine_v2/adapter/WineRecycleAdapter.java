@@ -86,13 +86,8 @@ public class WineRecycleAdapter extends RecyclerView.Adapter<WineViewHolder>{
      * @param newList
      */
     public void setFilter(List<Wine> newList){
-        if(newList.isEmpty()){
-            wineList.clear();
-            wineList.addAll(wineListCopy);
-        }else{
             wineList.clear();
             wineList.addAll(newList);
-        }
         notifyDataSetChanged();
     }
 }
