@@ -114,37 +114,38 @@ public class CameraActivity extends AppCompatActivity implements ZXingScannerVie
     public void handleResult(Result result) {
         final String scanResult = result.getText();
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        Boolean bool = false;
 
         for(Wine wine: Wine.getWineList()){
             if(scanResult.equals(String.valueOf(wine.getVarenummer()))){
+                bool = true;
                 Intent intent = new Intent(this, WineInfoActivity.class);
                 intent.putExtra("wine", wine);
                 startActivity(intent);
             }
         }
 
-        builder.setTitle("Wine was not Found");
-        builder.setPositiveButton("Scan a new Wine", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                scannerView.resumeCameraPreview(CameraActivity.this);
-            }
-        });
+        if(!bool){
+            builder.setTitle("Wine was not Found");
+            builder.setPositiveButton("Scan a new Wine", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    scannerView.resumeCameraPreview(CameraActivity.this);
+                }
+            });
 
-        builder.setNeutralButton("Create a new Wine", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                goToCreateWineActivity(scanResult);
-              /*
-                Intent intent = new Intent(this, CreateWineActivity.class);
-                intent.putExtra("vareNummer", scanResult);
-                startActivity(intent);
-               */
-            }
-        });
-        builder.setMessage(scanResult);
-        AlertDialog alert = builder.create();
-        alert.show();
+            builder.setNeutralButton("Create a new Wine", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    goToCreateWineActivity(scanResult);
+                }
+            });
+
+            builder.setMessage(scanResult);
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+
     }
 
     public void goToCreateWineActivity(String scannedResult){
