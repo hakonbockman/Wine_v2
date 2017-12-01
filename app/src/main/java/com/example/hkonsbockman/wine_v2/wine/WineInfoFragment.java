@@ -31,31 +31,28 @@ import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
-
+/**
+ *  This class was made following Lars Emil Knudsen's example playing with Fragments. Hence you can
+ *  see the wierd situation with wineIndex. Not sure what kind of purpose this has, but have never
+ *  had the time or will to experiment on a working solution of this fragment.
+ */
 public class WineInfoFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
     private WineListFragment.OnWineFragmentInteractionListener listener;
     private WineRecycleAdapter adapter;
-
     private Wine wine;
-
     public Bitmap imageBitmap;
     ImageView imageView;
     Fragment fragment;
-
     private static String mCurrentPhotoPath;
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static String [] camera_permission = {Manifest.permission.CAMERA};
     private static String currentImagePath;
-
     private List<Wine> wineList;
-
     public final static String WINE_INDEX = "wineIndex";
     private static final int DEFAULT_WINE_INDEX = 1;
-
     private TextView wineTitleView;
     private TextView wineTasteView;
     private TextView wineRegionView;
@@ -67,12 +64,8 @@ public class WineInfoFragment extends Fragment {
     private TextView wineFits1View;
     private TextView wineFits2View;
     private TextView wineFits3View;
-
-
     private ImageView winePosterImageView;
     private int i  = 0;
-
-
     private int wineIndex;
 
     public WineInfoFragment() {
