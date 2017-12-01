@@ -59,6 +59,16 @@ public class Wine implements Parcelable {
     private Bitmap picture;
     private String picturePATH;
 
+    public String getByteArray_converted_to_string() {
+        return byteArray_converted_to_string;
+    }
+
+    public void setByteArray_converted_to_string(String byteArray_converted_to_string) {
+        this.byteArray_converted_to_string = byteArray_converted_to_string;
+    }
+
+    private String byteArray_converted_to_string;
+
     public String getPicturePATH() {
         return picturePATH;
     }

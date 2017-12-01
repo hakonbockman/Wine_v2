@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.example.hkonsbockman.wine_v2.adapter.WineRecycleAdapter;
 import com.example.hkonsbockman.wine_v2.ioOperations.Storage;
 import com.example.hkonsbockman.wine_v2.model.Wine;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.List;
 
@@ -137,7 +139,10 @@ public class WineInfoFragment extends Fragment {
                 winePosterImageView.setImageDrawable(winePoster);
             }
         }else {
-            winePosterImageView.setImageBitmap(wine.getThumbnail());
+            byte [] decodedString = Base64.decode(wine.getByteArray_converted_to_string(), Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+            winePosterImageView.setImageBitmap(decodedByte);
         }
 
     }
@@ -156,9 +161,17 @@ public class WineInfoFragment extends Fragment {
 
             BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
             Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bitmapOptions);
+/*
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 50, byteArrayOutputStream);
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+
+            String encodedByteArray = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+            wine.setByteArray_converted_to_string(encodedByteArray);
 
             bitmap = Bitmap.createScaledBitmap(bitmap, 512, 512, true);
-
+*/
             winePosterImageView.setImageBitmap(bitmap);
 
         }
